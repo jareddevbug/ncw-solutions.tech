@@ -114,7 +114,7 @@ const industries = ['Retail', 'HR and Admin', 'Startups', 'Professional Services
 
 const solutions = [
   {
-    code: 'HR-01',
+    code: '01',
     eyebrow: 'HRIS Solutions',
     title: 'Human resource and employee management systems',
     description:
@@ -122,7 +122,7 @@ const solutions = [
     points: ['Employee profiles and records', 'Attendance and leave modules', 'Admin approvals and reporting'],
   },
   {
-    code: 'POS-02',
+    code: '02',
     eyebrow: 'Point of Sale',
     title: 'POS and sales operation platforms',
     description:
@@ -130,7 +130,7 @@ const solutions = [
     points: ['Sales and inventory tracking', 'Branch-level reporting', 'Receipt and transaction modules'],
   },
   {
-    code: 'WEB-03',
+    code: '03',
     eyebrow: 'Custom Platforms',
     title: 'Custom web apps and internal tools',
     description:
@@ -138,7 +138,7 @@ const solutions = [
     points: ['Role-based dashboards', 'Workflow automation', 'Integration-ready architecture'],
   },
   {
-    code: 'BRD-04',
+    code: '04',
     eyebrow: 'Web Presence',
     title: 'Landing pages and personal websites',
     description:
