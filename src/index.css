@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0f111a;
+  --color-surface: #151a27;
+  --color-surface-strong: #1a2030;
+  --color-border-soft: rgba(148, 163, 184, 0.16);
+  --color-text-main: #f8fafc;
+  --color-text-muted: #94a3b8;
+  --color-accent-cyan: #00f0ff;
+  --color-accent-blue: #0055ff;
+  --color-success-soft: #22c55e;
+  --color-danger-soft: #f87171;
+  --font-sans: Inter, Poppins, ui-sans-serif, system-ui, sans-serif;
+  --shadow-neon: 0 0 0 1px rgba(0, 240, 255, 0.16), 0 18px 60px rgba(0, 85, 255, 0.22);
+  --shadow-card: 0 20px 60px rgba(2, 6, 23, 0.42);
+  --shadow-button: 0 10px 30px rgba(0, 85, 255, 0.35);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background font-sans text-text-main antialiased;
+    background-image:
+      radial-gradient(circle at top left, rgba(0, 240, 255, 0.12), transparent 28%),
+      radial-gradient(circle at 80% 10%, rgba(0, 85, 255, 0.18), transparent 24%),
+      linear-gradient(180deg, #0f111a 0%, #0b1020 100%);
+  }
+
+  ::selection {
+    @apply bg-cyan-300/30 text-white;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply relative min-h-screen overflow-hidden;
+  }
+
+  .section-frame {
+    @apply mx-auto w-full max-w-7xl px-6 py-8 md:px-8 lg:px-10;
+  }
+
+  .neon-card {
+    @apply rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition duration-300;
+    box-shadow: var(--shadow-card);
+  }
+
+  .neon-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-neon);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-cyan to-accent-blue bg-clip-text text-transparent;
+  }
+
+  .neon-button {
+    @apply inline-flex items-center justify-center rounded-full border border-cyan-300/30 bg-gradient-to-r from-accent-cyan to-accent-blue px-6 py-3 text-sm font-semibold text-slate-950 transition duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    box-shadow: var(--shadow-button);
+  }
+
+  .neon-button:hover {
+    @apply scale-[1.02] brightness-110;
+  }
+
+  .ghost-button {
+    @apply inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:border-cyan-300/40 hover:bg-white/8 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  .section-title {
+    @apply text-3xl font-semibold tracking-tight text-white md:text-4xl;
+  }
+
+  .section-copy {
+    @apply mt-4 max-w-2xl text-base leading-7 text-text-muted;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+    background-size: 38px 38px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
